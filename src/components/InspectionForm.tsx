@@ -13,6 +13,7 @@ import InspectionComments from "./form-components/InspectionComments"
 import Manager from "./form-components/Manager"
 import Item from "./form-components/Item"
 import NoHazard from "./form-components/NoHazard"
+import InspectionSite from "./form-components/InspectionSite"
 
 // Dsign Import List
 // import { PaperDesign } from "../design/PaperDesign"
@@ -47,6 +48,9 @@ const InspectionForm: FC = () => {
                 }}
             >
                 <Grid container spacing={3}>
+                <Grid item xs={12} sm={12} md={12} lg={12}>
+                        <InspectionSite />
+                    </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <InspectionType />
                     </Grid>
