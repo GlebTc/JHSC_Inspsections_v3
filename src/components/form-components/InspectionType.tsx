@@ -1,0 +1,43 @@
+import {FormControlLabel, Radio, RadioGroup, Typography, Paper} from "@mui/material";
+import {useState, FC} from "react";
+import { PaperDesign, TitleDesign } from "../../design/Design";
+
+export const InspectionType: FC = () => {
+    const [value, setValue] = useState("");
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value);
+    }
+
+    return (
+        <Paper
+        elevation={12}
+        sx={
+            (designArgument)=> (
+                {
+                    ...PaperDesign,
+                    paddingTop: "30px",                  
+                }
+            )
+        }
+      >
+        <Typography
+          variant="h4"
+          sx={
+            TitleDesign
+          }      
+        >
+            Inspection Type
+        </Typography>  
+
+            <RadioGroup aria-label="inspection-type" name="inspection-type" value={value} onChange={handleChange}>
+                <FormControlLabel value="annual" control={<Radio />} label="Annual" />
+                <FormControlLabel value="followUp" control={<Radio />} label="Follow Up" />
+                <FormControlLabel value="other" control={<Radio />} label="Other" />
+            </RadioGroup>
+
+        </Paper>
+    );
+}
+
+export default InspectionType;
