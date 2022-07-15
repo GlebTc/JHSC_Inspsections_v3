@@ -58,15 +58,41 @@ export const InspectionSite: FC = () => {
                         })
                     }
                 >
-                    <FormControlLabel value="juravinski" control={<Radio />} label="Juravinski" />
-                    <FormControlLabel value="urgent_care" control={<Radio />} label="Urgent Care" />
-                    <FormControlLabel value="WLMH" control={<Radio />} label="WLMH" />
-                    <FormControlLabel value="JCC" control={<Radio />} label="JCC" />
-                    <FormControlLabel value="MUMC" control={<Radio />} label="MUMC" />
-                    <FormControlLabel value="st_peters" control={<Radio />} label="St. Peter's" />
-                    <FormControlLabel value="chedoke" control={<Radio />} label="Chedoke" />
-                    <FormControlLabel value="hgh" control={<Radio />} label="General" />
-                    <FormControlLabel value="other" control={<Radio />} label="Other" />
+                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <FormControlLabel value="juravinski" control={<Radio />} label="Juravinski" />
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <FormControlLabel value="urgent_care" control={<Radio />} label="Urgent Care" />
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <FormControlLabel value="WLMH" control={<Radio />} label="WLMH" />
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <FormControlLabel value="JCC" control={<Radio />} label="JCC" />
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <FormControlLabel value="MUMC" control={<Radio />} label="MUMC" />
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <FormControlLabel value="st_peters" control={<Radio />} label="St. Peter's" />
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <FormControlLabel value="chedoke" control={<Radio />} label="Chedoke" />
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <FormControlLabel value="hgh" control={<Radio />} label="General" />
+                    </Grid>
+                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <FormControlLabel value="other" control={<Radio />} label="Other" />
+                    </Grid>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 </Grid>
             </RadioGroup>
 
