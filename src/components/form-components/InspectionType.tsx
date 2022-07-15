@@ -1,6 +1,6 @@
 import {FormControlLabel, Radio, RadioGroup, Typography, Paper} from "@mui/material";
 import {useState, FC} from "react";
-import { PaperDesign, TitleDesign } from "../../design/Design";
+import { PaperDesign, TitleDesign } from "../../design/Styling";
 
 export const InspectionType: FC = () => {
     const [value, setValue] = useState("");
@@ -11,9 +11,9 @@ export const InspectionType: FC = () => {
 
     return (
         <Paper
-        elevation={12}
+        elevation={6}
         sx={
-            (designArgument)=> (
+            ()=> (
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  

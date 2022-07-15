@@ -1,15 +1,15 @@
 import {FC, useState} from 'react';
 import {Typography, Checkbox, Paper} from '@mui/material';
-import { PaperDesign, TitleDesign } from '../../design/Design';
+import { PaperDesign, TitleDesign } from '../../design/Styling';
 
 const ManagerCompleted: FC = () => {
     const [value, setValue] = useState(false);
 
     return (
         <Paper
-        elevation={12}
+        elevation={6}
         sx={
-            (designArgument)=> (
+            ()=> (
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  

@@ -1,6 +1,7 @@
 import {FormControlLabel, Radio, RadioGroup, Typography, Paper, Grid} from "@mui/material";
 import {useState, FC} from "react";
-import { PaperDesign, TitleDesign } from "../../design/Design";
+import { PaperDesign, TitleDesign } from "../../design/Styling";
+import SiteList from "../../data/SiteList";
 
 
 
@@ -13,9 +14,9 @@ export const InspectionSite: FC = () => {
 
     return (
         <Paper
-        elevation={12}
+        elevation={6}
         sx={
-            (designArgument)=> (
+            ()=> (
                 {
                     ...PaperDesign,
                     paddingTop: "30px",
@@ -27,7 +28,7 @@ export const InspectionSite: FC = () => {
         <Typography
           variant="h4"
           sx={
-            (designArgument)=> (
+            ()=> (
                 {
                     ...TitleDesign,
                     marginBottom: "30px",
@@ -58,41 +59,16 @@ export const InspectionSite: FC = () => {
                         })
                     }
                 >
-                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
-                        <FormControlLabel value="juravinski" control={<Radio />} label="Juravinski" />
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
-                        <FormControlLabel value="urgent_care" control={<Radio />} label="Urgent Care" />
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
-                        <FormControlLabel value="WLMH" control={<Radio />} label="WLMH" />
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
-                        <FormControlLabel value="JCC" control={<Radio />} label="JCC" />
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
-                        <FormControlLabel value="MUMC" control={<Radio />} label="MUMC" />
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
-                        <FormControlLabel value="st_peters" control={<Radio />} label="St. Peter's" />
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
-                        <FormControlLabel value="chedoke" control={<Radio />} label="Chedoke" />
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
-                        <FormControlLabel value="hgh" control={<Radio />} label="General" />
-                    </Grid>
-                    <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
-                        <FormControlLabel value="other" control={<Radio />} label="Other" />
-                    </Grid>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    {SiteList.map((site)=> (
+                        <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                            <FormControlLabel
+                                value={site.value}
+                                control={<Radio />}
+                                label={site.label}
+                                key={site.id}
+                            />
+                        </Grid>
+                    ))}
                 </Grid>
             </RadioGroup>
 

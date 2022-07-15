@@ -3,7 +3,7 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import {useState, FC} from "react";
-import { PaperDesign, TitleDesign } from "../../design/Design";
+import { PaperDesign, TitleDesign } from "../../design/Styling";
 
 const Hazard: FC = () => {
     const [value, setValue] = useState("");
@@ -16,9 +16,9 @@ const Hazard: FC = () => {
 
     return (
         <Paper
-        elevation={12}
+        elevation={6}
         sx={
-            (designArgument)=> (
+            ()=> (
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  

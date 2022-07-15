@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { AppBar, Toolbar, Typography, Grid, Box } from "@mui/material"
+import { AppBar, Toolbar, Typography, Grid, Box, Button } from "@mui/material"
 import { Container } from "@mui/system"
 
 
@@ -78,7 +78,18 @@ const InspectionForm: FC = () => {
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <Item />
                     </Grid>
+                    <Grid item xs={12} sm={12} md={12} lg={12}>
+                        <Button variant="contained" color="primary" sx={{
+                            width: "100%",
+                            marginTop: "1rem",
+                            marginBottom: "1rem",
+                            }}
+                        >
+                            Submit
+                        </Button>
+                    </Grid>
                 </Grid>
+
             
             </Container>            
 

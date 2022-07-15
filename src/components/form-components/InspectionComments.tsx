@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { TextField, Paper, Typography } from "@mui/material";
-import { PaperDesign, TitleDesign } from "../../design/Design";
+import { PaperDesign, TitleDesign } from "../../design/Styling";
 
 const InspectionComments: FC = () => {
     return (
         <Paper
-        elevation={12}
+        elevation={6}
         sx={
             (designArgument)=> (
                 {

@@ -1,6 +1,6 @@
 import {FC, useState} from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@mui/material';
-import { PaperDesign, TitleDesign } from '../../design/Design';
+import { PaperDesign, TitleDesign } from '../../design/Styling';
 
 // create a new component that renders a title and two dropdown menus
 export const InspectionArea: FC = () => {
@@ -12,7 +12,7 @@ export const InspectionArea: FC = () => {
     
     return (
         <Paper
-        elevation={12}
+        elevation={6}
         sx={
             (designArgument)=> (
                 {

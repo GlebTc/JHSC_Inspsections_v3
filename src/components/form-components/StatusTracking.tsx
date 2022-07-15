@@ -1,13 +1,13 @@
 import {FC} from 'react';
 import { TextField, Typography, Paper } from '@mui/material';
-import { PaperDesign, TitleDesign } from '../../design/Design';
+import { PaperDesign, TitleDesign } from '../../design/Styling';
 
 const StatusTracking: FC = () => {
     return(
         <Paper
-        elevation={12}
+        elevation={6}
         sx={
-            (designArgument)=> (
+            ()=> (
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  
