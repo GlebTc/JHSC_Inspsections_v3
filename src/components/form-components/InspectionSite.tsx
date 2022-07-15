@@ -49,18 +49,9 @@ export const InspectionSite: FC = () => {
                     )
                 }
             >
-                <Grid container
-                    sx={
-                        ()=>({
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "flex-start",
-                            alignItems: "space-between",                            
-                        })
-                    }
-                >
+                <Grid container>
                     {SiteList.map((site)=> (
-                        <Grid item xs={6} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
+                        <Grid item xs={12} sm={6} md={4} lg={3} sx={{textAlign:"left"}}>
                             <FormControlLabel
                                 value={site.value}
                                 control={<Radio />}

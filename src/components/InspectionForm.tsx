@@ -15,8 +15,6 @@ import Item from "./form-components/Item"
 import NoHazard from "./form-components/NoHazard"
 import InspectionSite from "./form-components/InspectionSite"
 
-// Dsign Import List
-// import { PaperDesign } from "../design/PaperDesign"
 
 const InspectionForm: FC = () => {
     return (

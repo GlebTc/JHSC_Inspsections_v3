@@ -67,7 +67,7 @@ const Hazard: FC = () => {
             </RadioGroup>
 
             <Typography variant="h6">
-                Date Completed / WOrk Order Issued
+                Date Completed / Work Order Issued
             </Typography>        
             <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DatePicker
