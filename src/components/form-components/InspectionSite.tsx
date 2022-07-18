@@ -4,13 +4,16 @@ import { PaperDesign, TitleDesign } from "../../design/Styling";
 import SiteList from "../../data/SiteList";
 
 
-
-export const InspectionSite: FC = () => {
-    const [value, setValue] = useState("");
+const InspectionSite: FC = () => {
+    
+    const [site, setSite] = useState<string>("");
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value);
+        setSite(event.target.value);
+
     }
+
+    console.log(`Site Selected: ${site}`);
 
     return (
         <Paper
@@ -38,7 +41,9 @@ export const InspectionSite: FC = () => {
             Inspection Site
         </Typography>  
 
-            <RadioGroup aria-label="inspection-type" name="inspection-type" value={value} onChange={handleChange}
+            <RadioGroup aria-label="inspection_site" name="inspection_site"
+                value={site}
+                onChange={handleChange} 
                 sx={
                     ()=> (
                         {
@@ -62,7 +67,6 @@ export const InspectionSite: FC = () => {
                     ))}
                 </Grid>
             </RadioGroup>
-
         </Paper>
     );
 }

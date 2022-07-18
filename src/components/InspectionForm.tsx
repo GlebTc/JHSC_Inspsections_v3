@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useState } from "react"
 import { AppBar, Toolbar, Typography, Grid, Box, Button } from "@mui/material"
 import { Container } from "@mui/system"
 
@@ -14,9 +14,13 @@ import Manager from "./form-components/Manager"
 import Item from "./form-components/Item"
 import NoHazard from "./form-components/NoHazard"
 import InspectionSite from "./form-components/InspectionSite"
+import InspectedBy from "./form-components/InspectedBy"
 
 
 const InspectionForm: FC = () => {
+
+
+
     return (
         <Container 
             maxWidth="xl"
@@ -46,14 +50,18 @@ const InspectionForm: FC = () => {
                 }}
             >
                 <Grid container spacing={3}>
-                <Grid item xs={12} sm={12} md={12} lg={12}>
-                        <InspectionSite />
+                    <Grid item xs={12} sm={12} md={12} lg={12}>
+                            <InspectionSite />
                     </Grid>
+                    <h1>Site Selected: {site}</h1>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <InspectionType />
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <Date />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                        <InspectedBy />
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <ManagerCompleted />
@@ -87,7 +95,6 @@ const InspectionForm: FC = () => {
                         </Button>
                     </Grid>
                 </Grid>
-
             
             </Container>            
 

@@ -2,8 +2,8 @@ import {FC, useState} from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@mui/material';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
 
-// create a new component that renders a title and two dropdown menus
-export const InspectionArea: FC = () => {
+
+export const InspectedBy: FC = () => {
     const [value, setValue] = useState("");
 
     const handleChange = (event: any) => {
@@ -14,7 +14,7 @@ export const InspectionArea: FC = () => {
         <Paper
         elevation={6}
         sx={
-            (designArgument)=> (
+            ()=> (
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  
@@ -64,4 +64,4 @@ export const InspectionArea: FC = () => {
     );
 }
 
-export default InspectionArea;
+export default InspectedBy;
