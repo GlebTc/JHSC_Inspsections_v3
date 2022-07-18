@@ -3,11 +3,11 @@ import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@m
 import { PaperDesign, TitleDesign } from '../../design/Styling';
 
 
-export const InspectedBy: FC = () => {
-    const [value, setValue] = useState("");
+export const InspectionArea: FC = () => {
+    const [inspectionArea, setInspectionArea] = useState("");
 
     const handleChange = (event: any) => {
-        setValue(event.target.value as string);
+        setInspectionArea(event.target.value as string);
     }
     
     return (
@@ -31,13 +31,13 @@ export const InspectedBy: FC = () => {
             Inspection Area
         </Typography>     
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%" }}>
-                <InputLabel id="inspection-type">Floor</InputLabel>
+                <InputLabel id='inspection_level'>Level</InputLabel>
                 <Select
-                    value={value}
+                    value={inspectionArea}
                     onChange={handleChange}               
                     inputProps={{
-                        name: 'inspection-type',
-                        id: 'inspection-type',
+                        name: 'inspection_level',
+                        id: 'inspection_level',
                     }}
                 >
                     <MenuItem value="level_1">Level 1</MenuItem>
@@ -46,22 +46,22 @@ export const InspectedBy: FC = () => {
                 </Select>
             </FormControl>
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%"  }}>
-                <InputLabel id="inspection-type">Area</InputLabel>
+                <InputLabel id="inspection_area">Area</InputLabel>
                 <Select
-                    value={value}
+                    value={inspectionArea}
                     onChange={handleChange}               
                     inputProps={{
-                        name: 'inspection-type',
-                        id: 'inspection-type',
+                        name: 'inspection_area',
+                        id: 'inspection_area',
                     }}
                 >
-                    <MenuItem value="level_1">Area 1</MenuItem>
-                    <MenuItem value="level_2">Area 2</MenuItem>
-                    <MenuItem value="level_3">Area 3</MenuItem>
+                    <MenuItem value="area_1">Area 1</MenuItem>
+                    <MenuItem value="area_2">Area 2</MenuItem>
+                    <MenuItem value="area_3">Area 3</MenuItem>
                 </Select>
             </FormControl>
         </Paper>
     );
 }
 
-export default InspectedBy;
+export default InspectionArea;

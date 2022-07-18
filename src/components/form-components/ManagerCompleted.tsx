@@ -3,7 +3,7 @@ import {Typography, Checkbox, Paper} from '@mui/material';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
 
 const ManagerCompleted: FC = () => {
-    const [value, setValue] = useState(false);
+    const [managerCompleted, setManagerCompleted] = useState(false);
 
     return (
         <Paper
@@ -26,9 +26,9 @@ const ManagerCompleted: FC = () => {
             Manager Completed
         </Typography>  
             <Checkbox
-                checked={value}
+                checked={managerCompleted}
                 onChange={(event) => {
-                    setValue(event.target.checked);
+                    setManagerCompleted(event.target.checked);
                 }
                 }
             />

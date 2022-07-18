@@ -47,6 +47,11 @@ const SiteList:
     },
     {
         id: 9,
+        label: "Satelite Site",
+        value: "satelite_site"
+    },
+    {
+        id: 10,
         label: "Other",
         value: "other"
     }

@@ -23,8 +23,8 @@ const StatusTracking: FC = () => {
         >
             Status Tracking
         </Typography>  
-            <TextField id="standard-basic" label="Status" variant="standard" />
-            <TextField id="standard-basic" label="Tracking Number" variant="standard" /> 
+            <TextField id="status" label="Status" variant="standard" />
+            <TextField id="tracking_number" label="Tracking Number" variant="standard" /> 
         </Paper>
     )
 }

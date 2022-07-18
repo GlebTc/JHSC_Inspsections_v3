@@ -7,7 +7,7 @@ const InspectionComments: FC = () => {
         <Paper
         elevation={6}
         sx={
-            (designArgument)=> (
+            ()=> (
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  
@@ -24,7 +24,7 @@ const InspectionComments: FC = () => {
             Inspection Comments
         </Typography>  
             <TextField
-                id="standard-multiline-static"
+                id="inspection_comments"
                 label="Comments"
                 multiline
                 rows={4}

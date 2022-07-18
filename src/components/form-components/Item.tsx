@@ -35,7 +35,7 @@ const Hazard: FC = () => {
             Inspection Hazard Details
         </Typography>  
             <TextField
-                id="hazard-item-number-1"
+                id="hazard_item_number_one"
                 label="Unsafe Conditions and/or Acts"
                 multiline
                 rows={4}
@@ -50,7 +50,7 @@ const Hazard: FC = () => {
                 Add Photo/Files
             </Button>
             <TextField
-                id="work-order-number"
+                id="work_order_number"
                 label="Work Order #"
                 multiline
                 rows={1}

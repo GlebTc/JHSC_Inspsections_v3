@@ -31,18 +31,18 @@ export const Manager: FC = () => {
             Manager
         </Typography>     
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%"  }}>
-                <InputLabel id="inspection-type">Manager</InputLabel>
+                <InputLabel id="manager">Manager</InputLabel>
                 <Select
                     value={value}
                     onChange={handleChange}               
                     inputProps={{
-                        name: 'inspection-type',
-                        id: 'inspection-type',
+                        name: 'manager',
+                        id: 'manager',
                     }}
                 >
-                    <MenuItem value="level_1">Manager 1</MenuItem>
-                    <MenuItem value="level_2">Manager 2</MenuItem>
-                    <MenuItem value="level_3">Manager 3</MenuItem>
+                    <MenuItem value="manager_1">Manager 1</MenuItem>
+                    <MenuItem value="manager_2">Manager 2</MenuItem>
+                    <MenuItem value="manager_3">Manager 3</MenuItem>
                 </Select>
             </FormControl>
 

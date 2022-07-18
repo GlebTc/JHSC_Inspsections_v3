@@ -3,7 +3,7 @@ import {Typography, Checkbox, Paper} from '@mui/material';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
 
 const NoHazarad: FC = () => {
-    const [value, setValue] = useState(false);
+    const [noHazard, setNoHazard] = useState(false);
 
     return (
         <Paper
@@ -26,14 +26,14 @@ const NoHazarad: FC = () => {
             No Hazards Found
         </Typography>  
             <Checkbox
-                checked={value}
+                checked={noHazard}
                 sx={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                 }}
                 onChange={(event) => {
-                    setValue(event.target.checked);
+                    setNoHazard(event.target.checked);
                 }
                 }
             />

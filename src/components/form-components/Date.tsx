@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
 
 export default function Date() {
-  const [value, setValue] = React.useState<Date | null>(null);
+  const [inspectionDate, setInspectionDate] = React.useState<Date | null>(null);
 
 
   return (
@@ -34,9 +34,9 @@ export default function Date() {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           label="Select Date"
-          value={value}
-          onChange={(newValue) => {
-            setValue(newValue);
+          value={inspectionDate}
+          onChange={(newDate) => {
+            setInspectionDate(newDate);
           }}
           renderInput={(params) => 
             <TextField

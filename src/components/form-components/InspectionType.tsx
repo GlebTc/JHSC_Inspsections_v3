@@ -30,9 +30,9 @@ export const InspectionType: FC = () => {
             Inspection Type
         </Typography>  
 
-            <RadioGroup aria-label="inspection-type" name="inspection-type" value={value} onChange={handleChange}>
+            <RadioGroup aria-label="inspection_type" name="inspection_type" value={value} onChange={handleChange}>
                 <FormControlLabel value="annual" control={<Radio />} label="Annual" />
-                <FormControlLabel value="followUp" control={<Radio />} label="Follow Up" />
+                <FormControlLabel value="follow_up" control={<Radio />} label="Follow Up" />
                 <FormControlLabel value="other" control={<Radio />} label="Other" />
             </RadioGroup>
 

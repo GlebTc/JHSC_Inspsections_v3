@@ -53,7 +53,7 @@ const InspectionForm: FC = () => {
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                             <InspectionSite />
                     </Grid>
-                    <h1>Site Selected: {site}</h1>
+                    <h1>Site Selected: </h1>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <InspectionType />
                     </Grid>
