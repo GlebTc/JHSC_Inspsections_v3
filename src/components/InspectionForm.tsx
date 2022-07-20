@@ -16,8 +16,18 @@ import NoHazard from "./form-components/NoHazard"
 import InspectionSite from "./form-components/InspectionSite"
 import InspectedBy from "./form-components/InspectedBy"
 
+// Interfaces Import List
+import { IReport } from "../data/Interfaces"
+
 
 const InspectionForm: FC = () => {
+
+    const [ report, setReport ] = useState<IReport>({})
+
+
+    const handleSubmit = () => {
+        console.log(report)
+    }
 
 
 
@@ -51,9 +61,8 @@ const InspectionForm: FC = () => {
             >
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={12} md={12} lg={12}>
-                            <InspectionSite />
+                            <InspectionSite setReport={setReport} report={report}/>
                     </Grid>
-                    <h1>Site Selected: </h1>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <InspectionType />
                     </Grid>
@@ -64,7 +73,7 @@ const InspectionForm: FC = () => {
                         <InspectedBy />
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
-                        <ManagerCompleted />
+                        <ManagerCompleted setReport={setReport} report={report}/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <InspectionArea />
@@ -90,6 +99,7 @@ const InspectionForm: FC = () => {
                             marginTop: "1rem",
                             marginBottom: "1rem",
                             }}
+                            onClick={handleSubmit}
                         >
                             Submit
                         </Button>
@@ -97,7 +107,6 @@ const InspectionForm: FC = () => {
                 </Grid>
             
             </Container>            
-
         </Container>
     )
 }

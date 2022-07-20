@@ -46,18 +46,18 @@ export const InspectionArea: FC = () => {
                 </Select>
             </FormControl>
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%"  }}>
-                <InputLabel id="inspection_area">Area</InputLabel>
+                <InputLabel id="inspection_dept">Area</InputLabel>
                 <Select
                     value={inspectionArea}
                     onChange={handleChange}               
                     inputProps={{
-                        name: 'inspection_area',
-                        id: 'inspection_area',
+                        name: 'inspection_dept',
+                        id: 'inspection_dept',
                     }}
                 >
-                    <MenuItem value="area_1">Area 1</MenuItem>
-                    <MenuItem value="area_2">Area 2</MenuItem>
-                    <MenuItem value="area_3">Area 3</MenuItem>
+                    <MenuItem value="dept_1">Department 1</MenuItem>
+                    <MenuItem value="dept_2">Department 2</MenuItem>
+                    <MenuItem value="dept_3">Department 3</MenuItem>
                 </Select>
             </FormControl>
         </Paper>
