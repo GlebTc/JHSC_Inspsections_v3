@@ -15,12 +15,10 @@ export default function Date() {
     <Paper
       elevation={6}
       sx={
-          ()=> (
               {
                   ...PaperDesign,
                   paddingTop: "30px",                  
               }
-          )
       }
     >
       <Typography
