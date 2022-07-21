@@ -15,12 +15,10 @@ export const InspectedBy: FC = () => {
         <Paper
         elevation={6}
         sx={
-            ()=> (
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  
                 }
-            )
         }
       >
         <Typography

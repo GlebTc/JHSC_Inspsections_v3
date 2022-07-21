@@ -7,12 +7,10 @@ const InspectionComments: FC = () => {
         <Paper
         elevation={6}
         sx={
-            ()=> (
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  
                 }
-            )
         }
       >
         <Typography

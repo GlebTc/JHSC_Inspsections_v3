@@ -15,14 +15,14 @@ const ManagerCompleted = ({setReport, report}:ManagerCompletedProps) => {
 
     return (
         <Paper
-        elevation={6}
-        sx={
+            elevation={6}
+            sx={
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  
                 }
-        }
-      >
+            }
+        >
         <Typography
           variant="h4"
           sx={
@@ -34,7 +34,6 @@ const ManagerCompleted = ({setReport, report}:ManagerCompletedProps) => {
             <Checkbox
                 checked={report.managerCompleted}
                 onChange={handleChange}
-
             />
         </Paper>  
     )

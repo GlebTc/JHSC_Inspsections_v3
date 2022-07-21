@@ -17,19 +17,20 @@ const InspectionSite = ({report, setReport}:InspectionSiteProps) => {
     return (
         <Paper
         elevation={6}
-        sx={{...PaperDesign,
-                    paddingTop: "30px",
-                    height: "auto",                  
+        sx={{
+            ...PaperDesign,
+            paddingTop: "30px",
+            height: "auto",                  
         }}
       >
         <Typography
-          variant="h4"
-          sx={         
-                {
-                    ...TitleDesign,
-                    marginBottom: "30px",
-                }
-         }      
+        variant="h4"
+        sx={         
+            {
+                ...TitleDesign,
+                marginBottom: "30px",
+            }
+        }      
         >
             Inspection Site
         </Typography>  
@@ -38,13 +39,11 @@ const InspectionSite = ({report, setReport}:InspectionSiteProps) => {
                 value={report.inspectionSite}
                 onChange={handleChange} 
                 sx={
-                    ()=> (
                         {
                             paddingLeft: "50px",
                             paddingRight: "50px",
 
                         }
-                    )
                 }
             >
                 <Grid container>

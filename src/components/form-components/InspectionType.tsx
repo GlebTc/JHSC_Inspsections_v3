@@ -13,12 +13,10 @@ export const InspectionType: FC = () => {
         <Paper
         elevation={6}
         sx={
-            ()=> (
-                {
-                    ...PaperDesign,
-                    paddingTop: "30px",                  
-                }
-            )
+            {
+                ...PaperDesign,
+                paddingTop: "30px",                  
+            }
         }
       >
         <Typography

@@ -12,21 +12,19 @@ export const Manager: FC = () => {
     
     return (
         <Paper
-        elevation={6}
-        sx={
-            ()=> (
+            elevation={6}
+            sx={
                 {
                     ...PaperDesign,
                     paddingTop: "30px",                  
                 }
-            )
-        }
-      >
+            }
+        >
         <Typography
-          variant="h4"
-          sx={
-            TitleDesign
-          }      
+            variant="h4"
+            sx={
+                TitleDesign
+            }      
         >
             Manager
         </Typography>     
