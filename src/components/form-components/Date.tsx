@@ -4,10 +4,18 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
+import { IReport } from '../../data/Interfaces';
 
-export default function Date() {
-  const [inspectionDate, setInspectionDate] = React.useState<Date | null>(null);
+interface DateProps {
+  report: IReport
+  setReport: (string: IReport) => void
+}
 
+export default function Date({report, setReport}: DateProps) {
+
+  const handleChange = (date_field: string | null | undefined) => {
+    setReport ({...report, inspectionDate: date_field})
+  }
 
   return (
     <Paper
@@ -30,10 +38,8 @@ export default function Date() {
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           label="Select Date"
-          value={inspectionDate}
-          onChange={(newDate) => {
-            setInspectionDate(newDate);
-          }}
+          value={report.inspectionDate}
+          onChange={(value)=>handleChange(value)}
           renderInput={(params) => 
             <TextField
               {...params}
