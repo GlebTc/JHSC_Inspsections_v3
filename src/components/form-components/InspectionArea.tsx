@@ -2,6 +2,14 @@ import {FC, useState} from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@mui/material';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
 
+// Created the DeptList API that contains the following information: site, label, value and level (floor)
+import DeptList from '../../data/DeptList';
+
+//  I have to import the report data into here to identify the site that I am navigating through
+//  Based on that information, I will have the first menu offer level selection
+//  Based on the selected level, I will display departments available
+
+//  I have to figure out how to best store data to access it properly.  Using an array in DeptList may be a bad idea.
 
 export const InspectionArea: FC = () => {
     const [inspectionArea, setInspectionArea] = useState("");
