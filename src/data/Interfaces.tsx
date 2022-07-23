@@ -3,4 +3,5 @@ export interface IReport {
     inspectionSite?: string;
     managerCompleted?: boolean;
     inspectionDate?: string | null | undefined;
+    inspectedBy?: string
 }
