@@ -1,12 +1,17 @@
-import {FormControlLabel, Radio, RadioGroup, Typography, Paper} from "@mui/material";
-import {useState, FC} from "react";
+import { FormControlLabel, Radio, RadioGroup, Typography, Paper } from "@mui/material";
 import { PaperDesign, TitleDesign } from "../../design/Styling";
+import { IReport } from '../../data/Interfaces'
+import { ChangeEvent } from "react";
 
-export const InspectionType: FC = () => {
-    const [value, setValue] = useState("");
+interface InspectionTypeProps {
+    report: IReport
+    setReport: (report: IReport) => void
+}
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value);
+export const InspectionType = ({ report, setReport}:InspectionTypeProps) => {
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setReport({...report, inspectionType: event.target.value})
     }
 
     return (
@@ -28,7 +33,7 @@ export const InspectionType: FC = () => {
             Inspection Type
         </Typography>  
 
-            <RadioGroup aria-label="inspection_type" name="inspection_type" value={value} onChange={handleChange}>
+            <RadioGroup aria-label="inspection_type" name="inspection_type" value={report.inspectionType} onChange={handleChange}>
                 <FormControlLabel value="annual" control={<Radio />} label="Annual" />
                 <FormControlLabel value="follow_up" control={<Radio />} label="Follow Up" />
                 <FormControlLabel value="other" control={<Radio />} label="Other" />
