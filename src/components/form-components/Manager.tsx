@@ -1,15 +1,19 @@
-import {FC, useState} from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@mui/material';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
+import { SelectChangeEvent } from '@mui/material/Select';
+import { IReport } from '../../data/Interfaces'
 
-// create a new component that renders a title and two dropdown menus
-export const Manager: FC = () => {
-    const [value, setValue] = useState("");
+interface ManagerProps {
+    report: IReport
+    setReport: (report: IReport) => void
+}
 
-    const handleChange = (event: any) => {
-        setValue(event.target.value as string);
-    }
+export const Manager = ({ report, setReport }: ManagerProps) => {
     
+    const handleChange = (event: SelectChangeEvent) => {
+        setReport({...report, manager: event.target.value as string})
+    }
+
     return (
         <Paper
             elevation={6}
@@ -31,7 +35,7 @@ export const Manager: FC = () => {
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%"  }}>
                 <InputLabel id="manager">Manager</InputLabel>
                 <Select
-                    value={value}
+                    value={report.manager}
                     onChange={handleChange}               
                     inputProps={{
                         name: 'manager',
