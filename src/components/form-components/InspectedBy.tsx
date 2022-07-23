@@ -1,14 +1,19 @@
-import {FC, FormEvent, useState} from 'react';
+import * as React from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@mui/material';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
 import UserList from '../../data/UserList';
+import { SelectChangeEvent } from '@mui/material/Select';
+import {IReport} from '../../data/Interfaces'
 
+interface InspectedByProps {
+    report: IReport
+    setReport: (report: IReport) => void
+}
 
-export const InspectedBy: FC = () => {
-    const [inspectedBy, setInspectedBy] = useState<string[]>([]);
+export const InspectedBy = ({report, setReport}: InspectedByProps) => {
 
-    const handleChange = (event: FormEvent<HTMLInputElement>) => {
-        return ([...inspectedBy, (event.target as HTMLInputElement).value]);
+    const handleChange = (event: SelectChangeEvent) => {
+        setReport({...report, inspectedBy: event.target.value as string})
     }
     
     return (
@@ -32,8 +37,8 @@ export const InspectedBy: FC = () => {
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%" }}>
                 <InputLabel id="inspected_by">Inspected By</InputLabel>
                 <Select
-                    value={inspectedBy}
-                    onSelect={handleChange}               
+                    value={report.inspectedBy}
+                    onChange={handleChange}               
                 >
                     {UserList.map((
                         (user: {
