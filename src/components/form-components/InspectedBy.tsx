@@ -1,9 +1,8 @@
-import * as React from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@mui/material';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
 import UserList from '../../data/UserList';
 import { SelectChangeEvent } from '@mui/material/Select';
-import {IReport} from '../../data/Interfaces'
+import { IReport } from '../../data/Interfaces'
 
 interface InspectedByProps {
     report: IReport
