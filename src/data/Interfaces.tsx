@@ -5,4 +5,5 @@ export interface IReport {
     inspectionDate?: string | null | undefined;
     inspectedBy?: string
     manager?: string
+    inspectionType?: string
 }

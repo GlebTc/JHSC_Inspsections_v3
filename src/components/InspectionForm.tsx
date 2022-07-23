@@ -64,7 +64,7 @@ const InspectionForm: FC = () => {
                             <InspectionSite setReport={setReport} report={report}/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
-                        <InspectionType />
+                        <InspectionType setReport={setReport} report={report}/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <Date setReport={setReport} report={report}/>
