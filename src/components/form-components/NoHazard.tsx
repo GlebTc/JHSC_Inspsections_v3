@@ -1,9 +1,21 @@
-import {FC, useState} from 'react';
-import {Typography, Checkbox, Paper} from '@mui/material';
+import { Typography, Checkbox, Paper } from '@mui/material';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
+import { IReport } from '../../data/Interfaces';
+import { ChangeEvent } from 'react';
 
-const NoHazarad: FC = () => {
-    const [noHazard, setNoHazard] = useState(false);
+interface NoHazaradProps {
+    report: IReport
+    setReport: (report: IReport) => void
+}
+
+const NoHazarad = ({ report, setReport}: NoHazaradProps) => {
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setReport({
+            ...report,
+            noHazard: event.target.checked
+        })
+    }
 
     return (
         <Paper
@@ -24,16 +36,13 @@ const NoHazarad: FC = () => {
             No Hazards Found
         </Typography>  
             <Checkbox
-                checked={noHazard}
+                checked={report.noHazard}
+                onChange={handleChange}
                 sx={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                 }}
-                onChange={(event) => {
-                    setNoHazard(event.target.checked);
-                }
-                }
             />
         </Paper>  
     )
