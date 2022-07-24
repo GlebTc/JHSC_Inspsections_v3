@@ -29,8 +29,6 @@ const InspectionForm: FC = () => {
         console.log(report)
     }
 
-
-
     return (
         <Container 
             maxWidth="xl"
@@ -61,7 +59,7 @@ const InspectionForm: FC = () => {
             >
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={12} md={12} lg={12}>
-                            <InspectionSite setReport={setReport} report={report}/>
+                        <InspectionSite setReport={setReport} report={report}/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <InspectionType setReport={setReport} report={report}/>
