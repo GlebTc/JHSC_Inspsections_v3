@@ -76,7 +76,7 @@ const InspectionForm: FC = () => {
                         <ManagerCompleted setReport={setReport} report={report}/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
-                        <InspectionArea />
+                        <InspectionArea setReport={setReport} report={report}/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4} lg={3}>
                         <StatusTracking />
