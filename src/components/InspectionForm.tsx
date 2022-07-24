@@ -29,6 +29,8 @@ const InspectionForm: FC = () => {
         console.log(report)
     }
 
+    const lgScreen: number = 4
+
     return (
         <Container 
             maxWidth="xl"
@@ -61,31 +63,31 @@ const InspectionForm: FC = () => {
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <InspectionSite setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
                         <InspectionType setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
                         <Date setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
                         <InspectedBy setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
                         <ManagerCompleted setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
                         <InspectionArea setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
                         <StatusTracking setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
-                        <InspectionComments />
+                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                        <InspectionComments setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
                         <Manager setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
                         <NoHazard setReport={setReport} report={report}/>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12}>

@@ -11,4 +11,5 @@ export interface IReport {
     inspectionAreaDept?: string
     statusTrackingStatus?: string
     statusTrackingNumber?: string
+    inspectionComments?: string
 }
