@@ -1,23 +1,31 @@
-import {FC, useState} from 'react';
 import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@mui/material';
+import { SelectChangeEvent } from '@mui/material/Select';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
+import { IReport } from '../../data/Interfaces';
 
-// Created the DeptList API that contains the following information: site, label, value and level (floor)
-import DeptList from '../../data/DeptList';
+interface InspectionAreaProps {
+    report: IReport
+    setReport: (report: IReport) => void
+}
 
-//  I have to import the report data into here to identify the site that I am navigating through
-//  Based on that information, I will have the first menu offer level selection
-//  Based on the selected level, I will display departments available
+export const InspectionArea = ({ report, setReport}: InspectionAreaProps) => {
 
-//  I have to figure out how to best store data to access it properly.  Using an array in DeptList may be a bad idea.
+    const handleChange = (event: SelectChangeEvent) => {
+        if (event.target.name === "inspection_area_level"){
+            setReport({
+                ...report,
+                insepctionAreaLevel: event.target.value
+            })
+        } else {
+            setReport({
+                ...report,
+                inspectionAreaDept: event.target.value
+            })
+        }
 
-export const InspectionArea: FC = () => {
-    const [inspectionArea, setInspectionArea] = useState("");
-
-    const handleChange = (event: any) => {
-        setInspectionArea(event.target.value as string);
     }
-    
+
+
     return (
         <Paper
         elevation={6}
@@ -37,13 +45,13 @@ export const InspectionArea: FC = () => {
             Inspection Area
         </Typography>     
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%" }}>
-                <InputLabel id='inspection_level'>Level</InputLabel>
+                <InputLabel id='inspection_area_level'>Level</InputLabel>
                 <Select
-                    value={inspectionArea}
+                    value={report.insepctionAreaLevel}
                     onChange={handleChange}               
                     inputProps={{
-                        name: 'inspection_level',
-                        id: 'inspection_level',
+                        name: 'inspection_area_level',
+                        id: 'inspection_area_level',
                     }}
                 >
                     <MenuItem value="level_1">Level 1</MenuItem>
@@ -52,13 +60,13 @@ export const InspectionArea: FC = () => {
                 </Select>
             </FormControl>
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%"  }}>
-                <InputLabel id="inspection_dept">Area</InputLabel>
+                <InputLabel id="inspection_level_dept">Area</InputLabel>
                 <Select
-                    value={inspectionArea}
+                    value={report.inspectionAreaDept}
                     onChange={handleChange}               
                     inputProps={{
-                        name: 'inspection_dept',
-                        id: 'inspection_dept',
+                        name: 'inspection_level_dept',
+                        id: 'inspection_level_dept',
                     }}
                 >
                     <MenuItem value="dept_1">Department 1</MenuItem>

@@ -6,4 +6,6 @@ export interface IReport {
     inspectedBy?: string
     manager?: string
     inspectionType?: string
+    insepctionAreaLevel?: string
+    inspectionAreaDept?: string
 }
