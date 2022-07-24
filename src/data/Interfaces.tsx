@@ -2,6 +2,7 @@ export interface IReport {
     id?: number;
     inspectionSite?: string;
     managerCompleted?: boolean;
+    noHazard?: boolean
     inspectionDate?: string | null | undefined;
     inspectedBy?: string
     manager?: string
