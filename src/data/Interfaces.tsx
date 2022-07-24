@@ -8,4 +8,6 @@ export interface IReport {
     inspectionType?: string
     insepctionAreaLevel?: string
     inspectionAreaDept?: string
+    statusTrackingStatus?: string
+    statusTrackingNumber?: string
 }
