@@ -2,7 +2,6 @@ import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@m
 import { SelectChangeEvent } from '@mui/material/Select';
 import { PaperDesign, TitleDesign } from '../../design/Styling';
 import { IReport } from '../../data/Interfaces';
-import { ChangeEvent } from 'react';
 
 interface InspectionAreaProps {
     report: IReport
@@ -12,6 +11,17 @@ interface InspectionAreaProps {
 export const InspectionArea = ({ report, setReport}: InspectionAreaProps) => {
 
     const handleChange = (event: SelectChangeEvent) => {
+        if (event.target.name === "inspection_area_level"){
+            setReport({
+                ...report,
+                insepctionAreaLevel: event.target.value
+            })
+        } else {
+            setReport({
+                ...report,
+                inspectionAreaDept: event.target.value
+            })
+        }
 
     }
 
