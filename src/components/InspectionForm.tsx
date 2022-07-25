@@ -24,12 +24,16 @@ const InspectionForm: FC = () => {
 
     const [ report, setReport ] = useState<IReport>({})
 
-
     const handleSubmit = () => {
         console.log(report)
     }
 
+    // Grid Container screen variables
     const lgScreen: number = 4
+    const mdScreen: number = 4
+
+    //  Array of form components
+    const formComponentsArray: string[] = ["InspectionType", "Date", "ManagerCompleted", "InspectionArea", "StatusTracking", "InspectionComments", "Manager", "NoHazard", "InspectedBy"]
 
     return (
         <Container 
@@ -63,31 +67,31 @@ const InspectionForm: FC = () => {
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <InspectionSite setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
                         <InspectionType setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
                         <Date setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
                         <InspectedBy setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
                         <ManagerCompleted setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
                         <InspectionArea setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
                         <StatusTracking setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
                         <InspectionComments setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
                         <Manager setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4} lg={lgScreen}>
+                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
                         <NoHazard setReport={setReport} report={report}/>
                     </Grid>
                     <Grid item xs={12} sm={12} md={12} lg={12}>
