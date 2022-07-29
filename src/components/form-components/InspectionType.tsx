@@ -7,7 +7,7 @@ interface InspectionTypeProps {
     setReport: (report: IReport) => void
 }
 
-export const InspectionType: React.FC<InspectionTypeProps> = ({ report, setReport }:InspectionTypeProps) => {
+export const InspectionType = ({ report, setReport }:InspectionTypeProps) => {
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setReport({...report, inspectionType: event.target.value})
