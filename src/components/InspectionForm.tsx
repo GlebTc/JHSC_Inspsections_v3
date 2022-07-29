@@ -19,8 +19,10 @@ import InspectedBy from "./form-components/InspectedBy"
 // Interfaces Import List
 import { IReport } from "../data/Interfaces"
 
+// Template Component Import List
+import BaseComponentSmall from "../design/BaseComponentSmall"
 
-const InspectionForm: FC = () => {
+const InspectionForm: FC<IReport> = (props: any) => {
 
     const [ report, setReport ] = useState<IReport>({})
 
@@ -28,12 +30,17 @@ const InspectionForm: FC = () => {
         console.log(report)
     }
 
-    // Grid Container screen variables
-    const lgScreen: number = 4
-    const mdScreen: number = 4
-
-    //  Array of form components
-    const formComponentsArray: string[] = ["InspectionType", "Date", "ManagerCompleted", "InspectionArea", "StatusTracking", "InspectionComments", "Manager", "NoHazard", "InspectedBy"]
+    //  Object of small form components
+    const smallComponents: {compName: string, compTitle: string}[] = [
+        {compName: "InspectionType", compTitle: "InspectionType"},
+        {compName: "Date", compTitle: "Date Inspected"},
+        {compName: "ManagerCompleted", compTitle: "ManagerCompleted"},
+        {compName: "InspectionArea", compTitle: "Inspection Area"},
+        {compName: "StatusTracking", compTitle: "Status Tracking"},
+        {compName: "InspectionComments", compTitle: "Inspection Comments"},
+        {compName: "Manager", compTitle: "Manager"},
+        {compName: "NoHazard", compTitle: "No Hazard Found"}
+    ]
 
     return (
         <Container 
@@ -67,33 +74,19 @@ const InspectionForm: FC = () => {
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <InspectionSite setReport={setReport} report={report}/>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
-                        <InspectionType setReport={setReport} report={report}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
-                        <Date setReport={setReport} report={report}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
-                        <InspectedBy setReport={setReport} report={report}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
-                        <ManagerCompleted setReport={setReport} report={report}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
-                        <InspectionArea setReport={setReport} report={report}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
-                        <StatusTracking setReport={setReport} report={report}/>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={mdScreen} lg={lgScreen}>
-                        <InspectionComments setReport={setReport} report={report}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
-                        <Manager setReport={setReport} report={report}/>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={mdScreen} lg={lgScreen}>
-                        <NoHazard setReport={setReport} report={report}/>
-                    </Grid>
+
+                    {smallComponents.map((item, index) => {
+                                return (
+                                    <BaseComponentSmall title={item.compTitle} content={<item.compName setReport={setReport} report={report} {...props}/>} key={index}/>
+                                    // I was receiving an error with the setReport={setReport} that "setReport={setReport} is not assignable to type 'IntrinsicAttributes'"
+                                    // I added the {...props} and added (props:any) to the component declaration
+                                    // I am now displaying the components but not the JSX content of these components
+                                    // The warnings suggest that the BaseComponentSmall component is rendering but the item.compName is not.
+                                )
+                            }
+                        )
+                    }
+                    
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <Item />
                     </Grid>

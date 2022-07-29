@@ -1,5 +1,4 @@
-import { TextField, Typography, Paper } from '@mui/material';
-import { PaperDesign, TitleDesign } from '../../design/Styling';
+import { TextField } from '@mui/material';
 import { IReport } from '../../data/Interfaces'
 import { ChangeEvent } from 'react';
 
@@ -25,26 +24,10 @@ const StatusTracking = ({ report, setReport}: StatusTrackingProps) => {
         }
 
     return(
-        <Paper
-            elevation={6}
-            sx={
-                {
-                    ...PaperDesign,
-                    paddingTop: "30px",                  
-                }
-            }
-        >
-        <Typography
-            variant="h4"
-            sx={
-                TitleDesign
-            }      
-        >
-            Status Tracking
-        </Typography>  
+        <>
             <TextField onChange={handleChange} id="status" label="Status" variant="standard" />
             <TextField onChange={handleChange} id="tracking_number" label="Tracking Number" variant="standard" /> 
-        </Paper>
+        </>
     )
 }
 

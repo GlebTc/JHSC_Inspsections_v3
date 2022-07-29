@@ -1,6 +1,5 @@
-import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@mui/material';
+import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import { SelectChangeEvent } from '@mui/material/Select';
-import { PaperDesign, TitleDesign } from '../../design/Styling';
 import { IReport } from '../../data/Interfaces';
 
 interface InspectionAreaProps {
@@ -27,23 +26,7 @@ export const InspectionArea = ({ report, setReport}: InspectionAreaProps) => {
 
 
     return (
-        <Paper
-        elevation={6}
-        sx={
-                {
-                    ...PaperDesign,
-                    paddingTop: "30px",                  
-                }
-        }
-      >
-        <Typography
-          variant="h4"
-          sx={
-            TitleDesign
-          }      
-        >
-            Inspection Area
-        </Typography>     
+        <>
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%" }}>
                 <InputLabel id='inspection_area_level'>Level</InputLabel>
                 <Select
@@ -73,8 +56,9 @@ export const InspectionArea = ({ report, setReport}: InspectionAreaProps) => {
                     <MenuItem value="dept_2">Department 2</MenuItem>
                     <MenuItem value="dept_3">Department 3</MenuItem>
                 </Select>
-            </FormControl>
-        </Paper>
+            </FormControl>        
+        </>
+
     );
 }
 
