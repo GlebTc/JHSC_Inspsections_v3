@@ -1,30 +1,20 @@
-import { FC, useState } from "react"
+import { useState } from "react"
 import { AppBar, Toolbar, Typography, Grid, Box, Button } from "@mui/material"
 import { Container } from "@mui/system"
 
 
 // Components Import List
-import InspectionType from './form-components/InspectionType'
-import Date from './form-components/Date'
-import ManagerCompleted from "./form-components/ManagerCompleted"
-import InspectionArea from "./form-components/InspectionArea"
-import StatusTracking from "./form-components/StatusTracking"
-import InspectionComments from "./form-components/InspectionComments"
-import Manager from "./form-components/Manager"
 import Item from "./form-components/Item"
-import NoHazard from "./form-components/NoHazard"
 import InspectionSite from "./form-components/InspectionSite"
-import InspectedBy from "./form-components/InspectedBy"
 
 // Interfaces Import List
 import { IReport } from "../data/Interfaces"
 
-// Template Component Import List
+// Template and List for Small Components
 import BaseComponentSmall from "../design/BaseComponentSmall"
+import SmallComponentList from "../data/SmallComponentList"
 
-// type ComponentTypes = InspectionType | Date | ManagerCompleted | InspectionArea | StatusTracking | InspectionComments | Manager | Item | NoHazard | InspectionSite | InspectedBy
-
-const InspectionForm: FC<IReport> = () => {
+const InspectionForm = () => {
 
     const [ report, setReport ] = useState<IReport>({})
 
@@ -32,17 +22,6 @@ const InspectionForm: FC<IReport> = () => {
         console.log(report)
     }
 
-    //  Object of small form components
-    const smallComponents: {compName: FC<any>, compTitle: string}[] = [
-        {compName: InspectionType, compTitle: "Inspection Type"},
-        {compName: Date, compTitle: "Date Inspected"},
-        {compName: ManagerCompleted, compTitle: "Manager Completed"},
-        {compName: InspectionArea, compTitle: "Inspection Area"},
-        {compName: StatusTracking, compTitle: "Status Tracking"},
-        {compName: InspectionComments, compTitle: "Inspection Comments"},
-        {compName: Manager, compTitle: "Manager"},
-        {compName: NoHazard, compTitle: "No Hazard Found"}
-    ]
 
     return (
         <Container 
@@ -77,7 +56,7 @@ const InspectionForm: FC<IReport> = () => {
                         <InspectionSite setReport={setReport} report={report}/>
                     </Grid>
 
-                    {smallComponents.map((item, index) => {
+                    {SmallComponentList.map((item, index) => {
                                 return (
                                     <BaseComponentSmall title={item.compTitle} content={<item.compName setReport={setReport} report={report} />} key={index}/>
                                 )
@@ -88,6 +67,7 @@ const InspectionForm: FC<IReport> = () => {
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <Item />
                     </Grid>
+
                     <Grid item xs={12} sm={12} md={12} lg={12}>
                         <Button variant="contained" color="primary" sx={{
                             width: "100%",
@@ -99,8 +79,7 @@ const InspectionForm: FC<IReport> = () => {
                             Submit
                         </Button>
                     </Grid>
-                </Grid>
-            
+                </Grid>            
             </Container>            
         </Container>
     )
