@@ -1,5 +1,4 @@
-import { Typography, Checkbox, Paper } from '@mui/material';
-import { PaperDesign, TitleDesign } from '../../design/Styling';
+import { Checkbox } from '@mui/material';
 import { IReport } from '../../data/Interfaces';
 import { ChangeEvent } from 'react';
 
@@ -17,34 +16,16 @@ const NoHazarad = ({ report, setReport}: NoHazaradProps) => {
         })
     }
 
-    return (
-        <Paper
-            elevation={6}
-            sx={
-                {
-                    ...PaperDesign,
-                    paddingTop: "30px",                  
-                }
-            }
-        >
-        <Typography
-            variant="h4"
-            sx={
-                TitleDesign
-            }      
-        >
-            No Hazards Found
-        </Typography>  
-            <Checkbox
-                checked={report.noHazard}
-                onChange={handleChange}
-                sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}
-            />
-        </Paper>  
+    return ( 
+        <Checkbox
+            checked={report.noHazard}
+            onChange={handleChange}
+            sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+            }}
+        /> 
     )
 }
 

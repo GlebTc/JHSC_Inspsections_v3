@@ -12,4 +12,5 @@ export interface IReport {
     statusTrackingStatus?: string
     statusTrackingNumber?: string
     inspectionComments?: string
+    
 }

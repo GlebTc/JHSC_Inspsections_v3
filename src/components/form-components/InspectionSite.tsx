@@ -1,5 +1,4 @@
-import {FormControlLabel, Radio, RadioGroup, Typography, Paper, Grid} from "@mui/material";
-import { PaperDesign, TitleDesign } from "../../design/Styling";
+import { FormControlLabel, Radio, RadioGroup, Grid } from "@mui/material";
 import SiteList from "../../data/SiteList";
 import { IReport } from "../../data/Interfaces";
 
@@ -15,26 +14,6 @@ const InspectionSite = ({report, setReport}:InspectionSiteProps) => {
     }
 
     return (
-        <Paper
-        elevation={6}
-        sx={{
-            ...PaperDesign,
-            paddingTop: "30px",
-            height: "auto",                  
-        }}
-      >
-        <Typography
-        variant="h4"
-        sx={         
-            {
-                ...TitleDesign,
-                marginBottom: "30px",
-            }
-        }      
-        >
-            Inspection Site
-        </Typography>  
-
             <RadioGroup aria-label="inspection_site" name="inspection_site"
                 value={report.inspectionSite}
                 onChange={handleChange} 
@@ -59,7 +38,6 @@ const InspectionSite = ({report, setReport}:InspectionSiteProps) => {
                     ))}
                 </Grid>
             </RadioGroup>
-        </Paper>
     );
 }
 

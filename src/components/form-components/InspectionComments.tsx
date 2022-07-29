@@ -1,5 +1,4 @@
-import { TextField, Paper, Typography } from "@mui/material";
-import { PaperDesign, TitleDesign } from "../../design/Styling";
+import { TextField } from "@mui/material";
 import { IReport } from "../../data/Interfaces";
 
 interface InspectionCommentsProps {
@@ -14,23 +13,6 @@ const InspectionComments = ({ report, setReport}: InspectionCommentsProps) => {
   }
 
   return (
-    <Paper
-      elevation={6}
-      sx={
-        {
-            ...PaperDesign,
-            paddingTop: "30px",                  
-        }
-      }
-    >
-    <Typography
-      variant="h4"
-      sx={
-        TitleDesign
-      }      
-    >
-        Inspection Comments
-    </Typography>  
         <TextField
           onChange={handleChange}
           id="inspection_comments"
@@ -40,7 +22,6 @@ const InspectionComments = ({ report, setReport}: InspectionCommentsProps) => {
           variant="outlined"
           sx={{ width: "90%", }}
         />
-    </Paper>
   );
 }
 

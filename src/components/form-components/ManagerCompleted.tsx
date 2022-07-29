@@ -1,5 +1,4 @@
-import {Typography, Checkbox, Paper} from '@mui/material';
-import { PaperDesign, TitleDesign } from '../../design/Styling';
+import { Checkbox } from '@mui/material';
 import { IReport } from '../../data/Interfaces';
 
 type ManagerCompletedProps = {
@@ -13,29 +12,11 @@ const ManagerCompleted = ({setReport, report}:ManagerCompletedProps) => {
         setReport({...report, managerCompleted: event.target.checked});
     }
 
-    return (
-        <Paper
-            elevation={6}
-            sx={
-                {
-                    ...PaperDesign,
-                    paddingTop: "30px",                  
-                }
-            }
-        >
-        <Typography
-          variant="h4"
-          sx={
-            TitleDesign
-          }      
-        >
-            Manager Completed
-        </Typography>  
+    return ( 
             <Checkbox
                 checked={report.managerCompleted}
                 onChange={handleChange}
             />
-        </Paper>  
     )
 }
 

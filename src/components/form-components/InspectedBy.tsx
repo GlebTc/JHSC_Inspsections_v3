@@ -1,5 +1,4 @@
-import { FormControl, InputLabel, Select, MenuItem, Paper, Typography } from '@mui/material';
-import { PaperDesign, TitleDesign } from '../../design/Styling';
+import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import UserList from '../../data/UserList';
 import { SelectChangeEvent } from '@mui/material/Select';
 import { IReport } from '../../data/Interfaces'
@@ -15,24 +14,7 @@ export const InspectedBy = ({report, setReport}: InspectedByProps) => {
         setReport({...report, inspectedBy: event.target.value as string})
     }
     
-    return (
-        <Paper
-        elevation={6}
-        sx={
-                {
-                    ...PaperDesign,
-                    paddingTop: "30px",                  
-                }
-        }
-      >
-        <Typography
-          variant="h4"
-          sx={
-            TitleDesign
-          }      
-        >
-            Inspected By
-        </Typography>     
+    return (    
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%" }}>
                 <InputLabel id="inspected_by">Inspected By</InputLabel>
                 <Select
@@ -52,7 +34,6 @@ export const InspectedBy = ({report, setReport}: InspectedByProps) => {
                     ))}
                 </Select>
             </FormControl>
-        </Paper>
     );
 }
 

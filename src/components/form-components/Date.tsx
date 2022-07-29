@@ -1,8 +1,7 @@
-import { TextField, Paper, Typography } from '@mui/material';
+import { TextField } from '@mui/material';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { PaperDesign, TitleDesign } from '../../design/Styling';
 import { IReport } from '../../data/Interfaces';
 
 interface DateProps {
@@ -17,23 +16,6 @@ export default function Date({report, setReport}: DateProps) {
   }
 
   return (
-    <Paper
-      elevation={6}
-      sx={
-              {
-                  ...PaperDesign,
-                  paddingTop: "30px",                  
-              }
-      }
-    >
-      <Typography
-        variant="h4"
-        sx={
-          TitleDesign
-        }      
-      >
-          Inspection Date
-      </Typography>        
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           label="Select Date"
@@ -47,6 +29,5 @@ export default function Date({report, setReport}: DateProps) {
           }
         />
       </LocalizationProvider>
-    </Paper>
   );
 }
