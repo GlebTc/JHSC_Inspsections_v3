@@ -1,6 +1,5 @@
 import { Paper, Typography, Grid } from '@mui/material';
 import { PaperDesign, TitleDesign } from './Styling'
-import { IReport } from '../data/Interfaces'
 
 interface BaseComponentSmallProps {
     title: string

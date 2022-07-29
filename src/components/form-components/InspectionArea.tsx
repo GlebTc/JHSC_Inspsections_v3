@@ -25,7 +25,7 @@ export const InspectionArea = ({ report, setReport}: InspectionAreaProps) => {
     }
 
 
-    return (
+    return (  
         <>
             <FormControl variant="standard" sx={{ m: 1, minWidth: 180, width: "80%" }}>
                 <InputLabel id='inspection_area_level'>Level</InputLabel>
@@ -58,7 +58,6 @@ export const InspectionArea = ({ report, setReport}: InspectionAreaProps) => {
                 </Select>
             </FormControl>        
         </>
-
     );
 }
 

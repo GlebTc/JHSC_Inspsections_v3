@@ -1,8 +1,9 @@
-import { FormControlLabel, Radio, RadioGroup, Typography, TextField, Button } from "@mui/material";
+import {FormControlLabel, Radio, RadioGroup, Typography, Paper, TextField, Button} from "@mui/material";
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { useState, FC } from "react";
+import {useState, FC} from "react";
+import { PaperDesign, TitleDesign } from "../../design/Styling";
 
 const Hazard: FC = () => {
     const [value, setValue] = useState("");
@@ -14,7 +15,23 @@ const Hazard: FC = () => {
     }
 
     return (
-        <>
+        <Paper
+        elevation={6}
+        sx={
+            {
+                ...PaperDesign,
+                paddingTop: "30px",                  
+            }
+        }
+      >
+        <Typography
+          variant="h4"
+          sx={
+            TitleDesign
+          }      
+        >
+            Inspection Hazard Details
+        </Typography>  
             <TextField
                 id="hazard_item_number_one"
                 label="Unsafe Conditions and/or Acts"
@@ -59,8 +76,9 @@ const Hazard: FC = () => {
                 }}
                 renderInput={(params) => <TextField {...params} sx={{ mb: "20px" }} />}
                 />
-            </LocalizationProvider>        
-        </>
+            </LocalizationProvider>
+
+        </Paper>
     );
 }
 
